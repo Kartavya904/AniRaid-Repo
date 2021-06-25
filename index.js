@@ -24,6 +24,10 @@ client.on('ready', () => {
         }
     })
 
+    const restartLogs = client.channels.cache.get('857888049589518336')
+    restartLogs.send(`${client.user.tag}, Has Just Been Started/Restarted`)
+
+
     client.on('guildMemberAdd',async(member) => {
         const aniraidGuild = client.guilds.cache.get(`857361612411633664`)
         client.channels.cache.get('857758680631214090').setName(`🌏 Total Members : ${aniraidGuild.memberCount}`)
@@ -34,7 +38,7 @@ client.on('ready', () => {
     client.on('guildMemberAdd', async(member) => {
         if (member.guild.id === '857361612411633664') {
             const welcomeChannel = client.channels.cache.get('857771203996549121')
-            welcomeChannel.send(`<@${member.id}>,Welcome To AniRaid's Official Server. I Hope You Enjoy.\nFirstly, I Would Like You To Get Verified By Reacting To The Message In ${member.guild.channels.cache.get('857766879149817886')}.\nPlease Also Head Into ${member.guild.channels.cache.get('857772891230830623')} To Take Up Some Cool Roles For Yourselves.`)
+            welcomeChannel.send(`<@${member.id}>,Welcome To AniRaid's Official Server. I Hope You Enjoy.\nFirstly, I Would Like You To Get Verified By Reacting To The Message In ${member.guild.channels.cache.get('857766879149817886')}.\nPlease Also Head Into ${member.guild.channels.cache.get('857772180435238932')} To Take Up Some Cool Roles For Yourselves.`)
         }
     })
 
