@@ -31,6 +31,20 @@ client.on('ready', () => {
         client.channels.cache.get('857759201001472061').setName(`🤖 Total Bots : ${aniraidGuild.members.cache.filter(m => m.user.bot).size}`)
     })
 
+    client.on('guildMemberAdd', async(member) => {
+        if (member.guild.id === '857361612411633664') {
+            const welcomeChannel = client.channels.cache.get('857771203996549121')
+            welcomeChannel.send(`<@${member.tag}>,Welcome To AniRaid's Official Server. I Hope You Enjoy.\nFirstly, I Would Like You To Get Verified By Reacting To The Message In ${member.guild.channels.cache.get('857766879149817886')}.\nPlease Also Head Into ${member.guild.channels.cache.get('857766879149817886')} To Take Up Some Cool Roles For Yourselves.`)
+        }
+    })
+
+    client.on('guildMemberRemove', async(member) => {
+        if (member.guild.id === '857361612411633664') {
+            const goodbyesChannel = client.channels.cache.get('857772891230830623')
+            goodbyesChannel.send(`${member.tag},Just Left AniRaid's Official Server. I Hope They Enjoyed.`)
+        }
+    })
+
 
     const baseFile = 'commands-base.js'
     const CommandBase = require(`./commands/${baseFile}`)
