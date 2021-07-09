@@ -71,7 +71,7 @@ module.exports = (client, commandOptions) => {
     client.on('message', async(message) => {
         const { member, content, guild, author} = message
         for (const alias of commands) {
-            if (content.toLowerCase().startsWith(`${prefix.toLowerCase()}${alias.toLowerCase()} `) || content.toLowerCase() === `${prefix.toLowerCase()}${alias.toLowerCase()}`|| content.toLowerCase().startsWith(`${prefix[1]}${alias.toLowerCase()} `) || content.toLowerCase() === `${prefix[1]}${alias.toLowerCase()}`) {
+            if (content.toLowerCase().startsWith(`${prefix.toLowerCase()}${alias.toLowerCase()} `) || content.toLowerCase() === `${prefix.toLowerCase()}${alias.toLowerCase()}`) {
                 for (const permission of permissions) {
                     if (!member.permissions.has(permission)) {
                         message.reply(permissionError)
